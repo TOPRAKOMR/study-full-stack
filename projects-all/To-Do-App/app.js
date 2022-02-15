@@ -10,8 +10,10 @@ inputBox.onkeyup=() =>{
         addBtn.classList.remove("active");
 
     }
+}
 
+addBtn.onclick = () =>{
+    let dolist= localStorage.getItem()
 
 
 }
-

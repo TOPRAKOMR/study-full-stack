@@ -1,33 +1,14 @@
-// let inputBox=document.querySelector(".content input");
+let addTime= new Date;
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+addDay= weekday[addTime.getDay()];
+
+head_day=document.getElementById("day");
+head_day.innerText=addDay;
+
+
 let addBtn=document.getElementById("addButton");
-console.log(addBtn);
-// let todolist=document.querySelector(".content todolist");
-// let todolist_arr =[];
-// inputBox.onkeyup=() =>{
-//     let userData =inputBox.value;
-//     if (userData.trim()!= 0) {
-//         addBtn.classList.add("active");
-        
-//     }else{
-//         addBtn.classList.remove("active");
-
-//     }
-// };
-
-
-// addBtn.addEventListener("click", () =>{
-//     let todo_new=inputBox.value;
-//     todolist_arr.forEach((element, index) =>{
-//         todo_new = '<li> ${element} <span> <i class="fas fa-trash"></i></span> </li>';
-        
-//     });
-//     // todolist_arr.push(inputBox.value);
-
-//     todolist.innerHTML=todo_new;
-// })
-
 let  todolist_arr = document.getElementsByTagName("li");
-console.log(todolist_arr);
+console.log(head_day);
  let i;
  for (i = 0; i < todolist_arr.length; i++) {
      let span = document.createElement("span");

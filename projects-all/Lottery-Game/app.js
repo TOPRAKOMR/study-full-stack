@@ -9,7 +9,7 @@ for (let i = 0; i < 6; i++) {
     lucky_number=Math.floor(Math.random() * 91);
     lucky_arr[i]=lucky_number;      
 };
-/// ilk 6 sayı
+/// ilk 6 sayı sıralama
 for (let x = 0; x < 6; x++) {
     for (let y = 0; y < 6; y++) {
         if (lucky_arr[y]>lucky_arr[y+1]){

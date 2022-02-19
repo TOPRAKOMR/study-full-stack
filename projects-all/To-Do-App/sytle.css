@@ -88,6 +88,35 @@ li.unchecked::before{
     border: none;
     border-radius: 5px;
     color: white;
-    padding: 0.3em 0.4em
+    padding: 0.3em 0.4em;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 3em;
 }
-
+input{
+    font-size: 1em;
+    border: none;
+    width: 100%;
+    padding: 1.5em;
+}
+input:focus{
+    outline: none;
+}
+hr{
+    flex-direction: column;
+}
+#footer{
+    display: flex;
+    flex-direction: row;
+}
+#list-group-container{
+    margin-bottom: 1em;
+}
+@media only screen and (max-width:1200px){
+    .todolist{
+        width: 80vw;
+    }
+    .add-task{
+        width: 80vw;
+    }
+}

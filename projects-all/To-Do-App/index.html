@@ -10,23 +10,26 @@
 
 </head>
 <body>
-    <div class="contanier">
+    <div class="container">
         <header> Happy <span id="day"></span></header>
-        <div class="content">
-            <input type="text" id="todo" placeholder="Add Jobs">
+        <div class="add-task">
+            <input type="task_text" id="todo" placeholder="Add Jobs">
             <button id="addButton"><i class="fa-solid fa-plus"></i></button>
 
         </div>
-        <ul id="todolist">
-            <li>deneme 1 </li>
-            <li>deneme 2 </li>
-            <li>deneme 3 </li>
-           
-        </ul>
+        <div class="todolist">
+            <ul id="list-group-container">
+                <li id="list-group-checked">deneme 1 </li>
+                <li id="list-group-unchecked">deneme 2 </li>
+                <li id="list-group-unchecked">deneme 3 </li>
+               
+            </ul>
+
+        </div>
+        
         <div class="footer">
             <span>Have todo jobs </span>
             <button id="allClear">Clear All <i class="fas fa-trash"></i></button>
-        
 
         </div>
     </div>

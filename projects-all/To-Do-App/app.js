@@ -6,7 +6,7 @@ addDay= weekday[addTime.getDay()];
 head_day=document.getElementById("day");
 head_day.innerText=addDay;
 //
-let addBtn=document.getElementById("addButton");
+let addBtn=document.getElementsByClassName(".addButton");
 let  todolist_arr = document.getElementsByTagName("li");
 
 //

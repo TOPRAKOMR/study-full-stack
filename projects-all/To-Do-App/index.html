@@ -13,19 +13,19 @@
     <div class="container">
         <h1> Happy <span id="day"></span></h1>
         <div class="add-task">
-            <input type="task_text" id="todo" placeholder="Add Jobs">
+            <input type="text" id="task_text" placeholder="&#128393; Add Jobs">
             <button class="addButton"><i class="fa-solid fa-plus"></i></button>
         </div>
         <div class="todolist">
             <h2>Yapılacaklar listesi</h2>
             <ul id="list-group-container">
                 <div class="list-group">
-                    <li class="checked">asfgjasgf </li>
+                    <li class="unchecked">asfgjasgf </li>
                     <button class="lst-btn"><i class="fa-solid fa-trash"></i> </button>
 
                 </div>
                 <div class="list-group">
-                    <li class="unchecked">deneme</li>
+                    <li class="checked">deneme</li>
                     <button class="lst-btn"><i class="fa-solid fa-trash"></i> </button>
                 </div>
             </ul>
@@ -33,12 +33,13 @@
         </div>
         
         <div id="footer">
-            <span>Have todo jobs </span>
-            <button id="allClear">Clear All <i class="fas fa-trash"></i></button>
+            <h3 class="count"> <p id="checked_task">0</p> out of <p id="all_task"> 0 </p> <p> tasks completed</p></h3>
+        
+            <!-- <button id="allClear">Clear All <i class="fas fa-trash"></i></button> -->
 
         </div>
     </div>
-<script src="app.js"></script>
+<script src="app1.js"></script>
     
 </body>
 </html>

@@ -105,7 +105,7 @@ input:focus{
 hr{
     flex-direction: column;
 }
-#footer{
+.footer{
     display: flex;
     flex-direction: row;
 }
@@ -119,4 +119,11 @@ hr{
     .add-task{
         width: 80vw;
     }
+}
+p{
+    font-size: 1.4em;
+    display: block;
+    display: inline-block;
+    margin-top: 1em;
+
 }

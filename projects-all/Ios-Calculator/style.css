@@ -1,84 +1,78 @@
 *{
+    box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 
 }
 body{
     background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
-.container{
-    display: grid;
-    grid-template-columns: 50px 50px 50px 50px;
-    background-color: black;
+.calc-container{
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: 50px 50px 50px 50px; */
+    background: black;
     color: beige;
-    text-align:center;
-    margin: 10px 10px 10px 10px;
-    grid-column-gap: 10px;
-    grid-row-gap:  10px;
+    align-items: center;
+    height: 840px;
+    width: 500px;
     border:  1px solid;
-
-    
-    
-}
-.content{
-    border: 1px solid;
-    height: 3rem;
-    text-align: center;
-    
-    
-
-}
-.Topscreen1{
-    grid-column: 1 /  5;
-    height: 1rem;
-    border: none;
-
-
-}
-.Screen1{
-    grid-column: 1 /span 4;
-    height: 2rem;
-    border: none;
-
-    
-
-
-}
-.Screen5{
-    grid-column: 1 /span 4;
-    height: 3rem;
-    border: none;
-
-
-
-}
-.Zero{
-    grid-column: 1 /span 2;
-
-   
-}
-.Proces1{
-    border-radius: 30px;
-    background-color:coral
-   
-
-
-}
-.Proces2{
-    border-radius: 30px;
-    background-color:darkgrey
-    
-
+    padding: 20px;
     
 }
-.Button{
-    border-radius: 30px;
-    background-color:rgb(71, 58, 58);
-
+.calc-display{
+    height: 250px;
+    width: 100%;
+    text-align: right;
+    padding: 2px;
+    font-size: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     
-   
 }
+.pre-display{
+    opacity: 0.5;
+    font-size: 30px;
+    overflow: hidden;
+}
+.buttons-container{
+   display: grid;
+   grid-gap:10px;
+   grid-template-columns: repeat(4,1fr);
+   grid-template-rows: repeat(5,1fr);
+
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 45px;
+    height: 100px;
+    width: 100px;
+    transition: filter 0.3s;
+
+}
+.btn.Proces2{
+    color: black;
+    background: #a5a5a5;
+    
+}
+.btn.Proces1{
+    background-color:#f1a33c;
+    
+}
+
 .Button:hover{
     background-color:rgba(71, 58, 58, 0.336)
 }
@@ -89,4 +83,11 @@ body{
 .Proces2:hover{
     background-color:rgba(169, 169, 169, 0.432)
 
+}
+.btn.Zero{
+    border-radius: 55px;
+    grid-column: 1/ span 2;
+    justify-content: flex-start;
+    padding-left: 43px;
+    width: 215px;
 }

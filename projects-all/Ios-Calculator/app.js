@@ -13,7 +13,7 @@ function calc () {
             return Number(first_number)+Number(pre_display.innerHTML);
         case "-":
             return Number(first_number)-Number(pre_display.innerHTML);
-        case "*":
+        case "x":
             return Number(first_number)*Number(pre_display.innerHTML);
         case "/":
             return Number(first_number)/Number(pre_display.innerHTML);

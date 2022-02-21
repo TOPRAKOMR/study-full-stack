@@ -1,5 +1,8 @@
-let rd_number= Math.floor(Math.random()*101);
-console.log(rd_number);
+function rnd_number () {
+    return  Math.floor(Math.random()*101)
+}
+
+console.log(rnd_number());
 let i=1;
 let up_number=100;
 let down_number=0;

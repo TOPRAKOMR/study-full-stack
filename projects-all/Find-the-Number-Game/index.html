@@ -5,14 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find a Number Game</title>
+    <link rel="stylesheet" href="sytle.css">
 
 </head>
 <body>
     <h1>Guess The Number (1-100)</h1>
-    <input type="text" id="number_text" placeholder="Tahmin edeceğiz sayıyı giriniz">
-    <button id="btn_check">CHECK</button>
-    <h2>Write the Number.</h2>
-    <h3>Number of attempts: <span id="attempts"></span></h3>
+    <div class="guess_main">
+        <input type="text" id="number_text" placeholder="Tahmin edeceğiz sayıyı giriniz">
+        <button id="btn_check">CHECK</button>
+
+    </div>
+    <div class="footer">
+        <h2>Write the Number.</h2>
+        <div class="Guess number result ">
+            <ul id="result_list">
+                
+            </ul>
+            <h3>Number of attempts: <span id="attempts"></span></h3>
+        </div>
+    </div>
+    
+    
+    
     
     
     <script src="app.js"></script>

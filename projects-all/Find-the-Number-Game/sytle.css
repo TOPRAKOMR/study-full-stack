@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h1{
+    font-size: 3rem;
+    text-align: center;
+}
+#number_text{
+    display: flex;
+    justify-content: center;
+    border: 2px solid #fff;
+    width: auto;
+    border-radius: 30px;
+}
+#btn_check{
+    display: flex;
+    padding: 0.5rem 1.5rem;
+    justify-content: center;
+    width: auto;
+    border-radius: 15px;
+    border: none;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+

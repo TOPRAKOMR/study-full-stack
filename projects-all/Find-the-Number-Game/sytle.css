@@ -22,7 +22,7 @@ h1{
     justify-content: center;
     border: 2px solid #fff;
     width: auto;
-    border-radius: 30px;
+    border-radius: 20px;
 }
 #btn_check{
     display: flex;
@@ -34,5 +34,10 @@ h1{
     font-size: 1.2rem;
     position: relative;
 }
-
+.footer{
+    border:solid;
+    margin-top: 5px;
+    padding: 5px;
+    width: 35%;
+}
 

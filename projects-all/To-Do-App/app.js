@@ -6,54 +6,61 @@ addDay= weekday[addTime.getDay()];
 head_day=document.getElementById("day");
 head_day.innerText=addDay;
 //
-let addBtn=document.getElementsByClassName(".addButton");
-let  todolist_arr = document.getElementsByTagName("li");
 
-//
- for (i = 0; i < todolist_arr.length; i++) {
-     let span = document.createElement("span");
-     let txt = document.createTextNode("\u00D7");
-     span.className="close_job";
-     span.appendChild(txt);
-     todolist_arr[i].appendChild(span);
-     
- }
+const addBtn =document.querySelector(".addButton");
+const txt_task =document.querySelector("#task_text");
+const ul =document.querySelector("#list-group-container");
 
- let close = document.getElementsByClassName("close_job");
- //let x;
- for ( i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-        let job = this.parentElement;
-        job.style.display="none";
 
+const task_create =(txt_task)  =>{
+    return `
+    <div class="list-group">
+            <li class="checked">${txt_task} </li>
+            <button class="lst-btn"><i class="fa-solid fa-trash"></i> </button>
+    </div>`
+};
+
+addBtn.addEventListener("click", ()=>{
+    if (txt_task.value) {
+        ul.innerHTML+=task_create(txt_task.value);
+        txt_task.value="";
     }
-     
- }
-
-addBtn.addEventListener("click", () => {
-    let li_job= document.createElement("li");
-    let userdata =document.getElementById("todo").value;
-    let addText= document.createTextNode(userdata);
-    li_job.appendChild(addText);
-    if (userdata =="") {
-        alert("içerik girmelisiniz..")
-        }
     else{
-        document.getElementById("todolist").appendChild(li_job);
+        alert("Lütfen metin giriniz..");
     }
-    document.getElementById("todo").value="";
-    let spanAdd = document.createElement("span");
-    let txtAdd = document.createTextNode("\u00D7");
-    spanAdd.className="close_job";
-    spanAdd.appendChild(txtAdd);
-    li_job.appendChild(spanAdd);
+    count_task();
+});
 
-    for (let i = 0; i < close.length; i++) {
-        close[i].onclick = function () {
-            let div =this.parentElement;
-            div.style.display="none";
-            
-        };
-        
+ul.addEventListener("click", e=>{
+    if (e.target.classList.contains("lst-btn")) {
+        e.target.parentElement.remove();   
+        count_task();     
     }
-  });
+})
+
+ul.addEventListener("click", e =>{
+    if (e.target.classList.contains("unchecked")) {
+        e.target.className="checked";
+    }
+    else{
+        e.target.className="unchecked";
+    }
+    count_task();
+    
+})
+
+const count_task =() =>{
+    let checked_count=ul.getElementsByClassName("unchecked").length;
+    let task_count=ul.getElementsByClassName("lst-btn").length;
+    const checked_task= document.getElementById("checked_task");
+    const alltask=document.getElementById("all_task");
+    checked_task.innerText=checked_count;
+    alltask.innerText=task_count;
+
+}
+
+
+
+
+
+

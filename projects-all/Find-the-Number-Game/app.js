@@ -1,52 +1,47 @@
-function rnd_number () {
+function rnd_number_fnc () {
     return  Math.floor(Math.random()*101)
 }
+let rnd_number=rnd_number_fnc ()
 
-console.log(rnd_number());
-let i=1;
-let up_number=100;
-let down_number=0;
+
+
+console.log(rnd_number);
+// let i=1;
+// let up_number=100;
+// let down_number=0;
 
 
 let predNumber = document.getElementById("number_text");
-let btn = document.getElementById("btn_check");
-btn.addEventListener("click", ()=>{
-    pred_number=predNumber.value
-    console.log(pred_number);
+let btn_check = document.getElementById("btn_check");
+let btn_reset = document.getElementById("btn_reset");
+let list_number=document.getElementById("result_list");
+
+btn_check.addEventListener("click", ()=>{
+    // let newLi =document.createElement("li");
+    // let licontent = document.createTextNode(predNumber.value);
+
+    let number=predNumber.value;
     
-    do {
+    if(number==rnd_number){
+        list_number.innerHTML+= '<li>' + number +' (too low)</li>';
         
-        if(pred_number==rd_number){
-            //console.log("sayı esittir"+ i +".denemde buldunuz");
-            //pred_number=prompt("sayı esittir"+ i +".denemde buldunuz");
-            document.getElementById("attempts").innerText=i+ ". denemeniz";
-            break;
+    
+        
+    }
+    else if( number > rnd_number){
+        list_number.innerHTML+= '<li>' + number +' (too low)</li>';
 
-        }
-        else if( pred_number > rd_number){
-            //console.log("tahmin edilen sayı" + pred_number +"sayısından küçüktür." + i +".denemde buldunuz");
-            pred_number=prompt("tahmin edilen sayı" + pred_number +"sayısından küçüktür." + i +".denemde buldunuz");
-            i++;
-
-
-        }
-        else if(pred_number<rd_number){
-            console.log("tahmin edilen sayı" +pred_number +"sayısından büyüktür." +i +".denemde buldunuz");
-            pred_number=prompt( pred_number,"100");
-
-            i++;
-           
-            
+        i++;
 
 
         }
-        
-    } while (pred_number==rd_number);
-            
-    
+    else if(number<rnd_number){
+        list_number.innerHTML+= '<li>' + number +' (too low)</li>';
 
+        i++;
         
-    
+        }
+        
 
 })
 

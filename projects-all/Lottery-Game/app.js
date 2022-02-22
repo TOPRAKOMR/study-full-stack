@@ -2,7 +2,6 @@ let lucky_arr=[];
 
 function lucky_fun() {    
 let lucky_number;
-lucky_arr=[];
 let lucky_number7;
 // ilk 6 sayı üretildi..
 for (let i = 0; i < 6; i++) {
@@ -31,40 +30,18 @@ lucky_arr[7]=Math.floor(Math.random() * 91);
 return lucky_arr;
 }
 
-//console.log(lucky_fun());
 
 let lucky_btn=document.getElementById("btn_number");
-
-// console.log(input_number);
-// let repeat;
-
+let number_result=document.getElementById("result");
 lucky_btn.addEventListener("click",()=>{
+    number_result.innerHTML="";
     
     let input_number=document.getElementById("txt_number").value;
     repeat=input_number;
 
     for (let i = 0; i < repeat; i++) {
         lucky_fun();
-        yazdir();
+        number_result.innerHTML+= "<li> "+ lucky_arr[0]+" - "+ lucky_arr[1]+" - " +lucky_arr[2] +" - "+ lucky_arr[3]+" - "+ lucky_arr[4]+" - "+ lucky_arr[5]+" | "+ lucky_arr[6]+" | " + lucky_arr[7]+ "</li>";
         
     }
-    //console.log(repeat);
-
 })
-
-
-//ekran yazdırma.
-function yazdir() {
-    let li_lucky=document.createElement("li");
-    let Li_Text= document.createTextNode(lucky_arr);
-    li_lucky.appendChild(Li_Text);
-    document.getElementById("result").appendChild(li_lucky);
-    
-}
-
-
-
-
-
-
-

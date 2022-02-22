@@ -21,7 +21,7 @@ function calc () {
     
 }
 
-console.log(list_btn);
+// console.log(list_btn);
 
 list_btn.addEventListener("click", (e) =>{
     if(!e.target.classList.contains("btn")) return;
@@ -32,8 +32,8 @@ list_btn.addEventListener("click", (e) =>{
     if(e.target.classList.contains("AC")){
         operator="";
         first_number="";
-        pre_display.innerHTML="0";
-        current_display.innerHTML="";
+        pre_display.innerHTML="";
+        current_display.innerHTML="0";
     }
 
 
@@ -53,10 +53,14 @@ list_btn.addEventListener("click", (e) =>{
             pre_display.innerHTML="-"+pre_value;
 
     }
-    if(e.target.classList.contains("Dot")){
-        if(!pre_value.includes("."))
-        pre_display.innerHTML+=".";
+    if(e.target.classList.contains("Dot Button")){
+        if(!btn_value.includes('.')){
+            pre_display.innerHTML+=".";
+
+        }
+        
     }
+
     if(e.target.classList.contains("Proces1")){
         if(!isPrevOperator){
             if(current_display.innerHTML && operator){
@@ -64,36 +68,24 @@ list_btn.addEventListener("click", (e) =>{
             }
             else first_number =pre_value;
         pre_display.innerHTML="0";
+        
         }
     operator=btn_value;
-    current_display.innerHTML=first_number+" "+operator;
-    isPrevOperator=true;
+    current_display.innerHTML=first_number;
     }
     else isPrevOperator=false;
 
 
-    if(e.target.classList.contains("Euqal")){
+    if(e.target.classList.contains("Euqal Proces1")){
         first_number=calc();
         operator="";
-        current_display.innerHTML=first_number;
         pre_display.innerHTML="0";
+        current_display.innerHTML=first_number;
         isPrevOperator=true;
 
     }
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

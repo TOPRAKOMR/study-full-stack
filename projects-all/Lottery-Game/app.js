@@ -5,7 +5,7 @@ let lucky_number;
 let lucky_number7;
 // ilk 6 sayı üretildi..
 for (let i = 0; i < 6; i++) {
-    lucky_number=Math.floor(Math.random() * 91) +1;
+    lucky_number=Math.floor(Math.random() * 91);
     lucky_arr[i]=lucky_number;      
 };
 /// ilk 6 sayı sıralama

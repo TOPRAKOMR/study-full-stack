@@ -41,7 +41,7 @@ lucky_btn.addEventListener("click",()=>{
 
     for (let i = 0; i < repeat; i++) {
         lucky_fun();
-        number_result.innerHTML+= "<li> "+ lucky_arr[0]+" - "+ lucky_arr[1]+" - " +lucky_arr[2] +" - "+ lucky_arr[3]+" - "+ lucky_arr[4]+" - "+ lucky_arr[5]+" | "+ lucky_arr[6]+" | " + lucky_arr[7]+ "</li> <hr> " ;
+        number_result.innerHTML+= "<li> &#9824  "+ lucky_arr[0]+" - "+ lucky_arr[1]+" - " +lucky_arr[2] +" - "+ lucky_arr[3]+" - "+ lucky_arr[4]+" - "+ lucky_arr[5]+" | "+ lucky_arr[6]+" | " + lucky_arr[7]+ "</li> <hr> " ;
         
     }
 })

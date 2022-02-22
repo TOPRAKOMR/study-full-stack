@@ -91,7 +91,7 @@ li.unchecked::before{
     padding: 0.3em 0.4em;
     font-size: 1.2em;
     cursor: pointer;
-    width: 3em;
+    width: 4em;
 }
 input{
     font-size: 1em;

@@ -1,9 +1,18 @@
 * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0px;
   padding: 0px;
 }
 
-h1 {
-  color: blue;
+.container {
+  padding: 0 1rem;
+}
+
+body {
+  background-color: pink;
+  font-family: "tahoma";
+  font-size: 1.2rem;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

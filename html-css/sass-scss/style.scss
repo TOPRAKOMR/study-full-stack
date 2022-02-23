@@ -1,9 +1,14 @@
 @import "variables";
+@import "reset";
 
 .container{
-    color: blue;
+    padding: 0 1rem;
+
 }
 
-h1{
-    color: blue;
+body{
+    background-color: $bgColor;
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    color:$fontColor;
 }

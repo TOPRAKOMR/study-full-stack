@@ -1,5 +1,6 @@
 @import "variables";
 @import "reset";
+@import "mixin";
 
 .container{
     padding: 0 1rem;
@@ -11,4 +12,78 @@ body{
     font-family: $fontFamily;
     font-size: $fontSize;
     color:$fontColor;
+}
+
+//! Nesting usage
+
+nav{
+    display: flex;
+    justify-content: space-betweens;
+    background-color: $navBgColor;
+    .brand{
+        img{
+            width: 80px;
+            border: $navBgColor;
+            border-radius: 30%;
+            padding: 10px;
+            margin:10px
+        }
+    }
+}
+.navbar{
+    margin: 10px;
+    ul{
+        list-style-type: none;
+        display: flex;
+        li{
+            a{
+                text-decoration: none;
+                padding: 5px;
+                color: black;
+                font-size: $myLinkSize;
+            }
+        }
+    }
+}
+
+// Slider Nesting
+
+.slider{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: $sliderBgColor;
+    .left{
+        margin-top: 10px;
+        button{
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px;
+            background-color: $navBgColor;
+            font-size: $myLinkSize;
+            border: 2px solid gray;
+
+            &:hover{
+                background-color: green;
+                border: 2px solid pink;
+            }
+        }
+    }
+}
+
+img{
+    width: 30%;
+}
+
+
+//! mixin Usage
+.content{
+    .cards{
+        display: flex;
+    }
+    .card1{
+        @include myBox(brown, white)
+    }
+    .card2{
+        @include myBox(rgb(199,255,192),blue)
+    }
 }

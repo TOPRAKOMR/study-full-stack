@@ -15,4 +15,100 @@ body {
   font-size: 1.2rem;
   color: white;
 }
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-betweens;
+      -ms-flex-pack: space-betweens;
+          justify-content: space-betweens;
+  background-color: #30a7c3;
+}
+
+nav .brand img {
+  width: 80px;
+  border: #30a7c3;
+  border-radius: 30%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.navbar {
+  margin: 10px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  padding: 5px;
+  color: black;
+  font-size: 19px;
+}
+
+.slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #cc6699;
+}
+
+.slider .left {
+  margin-top: 10px;
+}
+
+.slider .left button {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #30a7c3;
+  font-size: 19px;
+  border: 2px solid gray;
+}
+
+.slider .left button:hover {
+  background-color: green;
+  border: 2px solid pink;
+}
+
+img {
+  width: 30%;
+}
+
+.content .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content .card1 {
+  background-color: brown;
+  color: white;
+  width: 25%;
+  height: 200px;
+  border: red;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.content .card2 {
+  background-color: #c7ffc0;
+  color: blue;
+  width: 25%;
+  height: 200px;
+  border: red;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
 /*# sourceMappingURL=style.css.map */

@@ -23,7 +23,7 @@ productsDiv.addEventListener("click",(event)=>{
             quantityP.innerText--;
             //calculate ProductTotal
             //Cart total
-            calculateCartTotal(quantityP);
+            calculateProductTotal(quantityP);
 
         }
         else{
@@ -43,7 +43,7 @@ productsDiv.addEventListener("click",(event)=>{
         quantityP.innerText++;
         //calculate ProductTotal
         //Cart total
-        calculateCartTotal(quantityP);
+        calculateProductTotal(quantityP);
 
     }
 
@@ -53,11 +53,20 @@ productsDiv.addEventListener("click",(event)=>{
         // console.log("Remove Btn clicked")
         quantityP.parentElement.parentElement.parentElement.remove();
         //Cart total
+        calculateCartTotal();
 
     }
+    
 
 })
 
+const calculateProductTotal=(quantityP)=>{
+    let productPrice=quantityP.parentElement.parentElement.querySelector("strong");
+    let productTotalPriceDiv=quantityP.parentElement.parentElement.querySelector("product-line-price");
+    productTotalPriceDiv.innerText=(quantityP.innerText*productPrice.innerText).toFixed(2);
+    calculateCartTotal();
+
+}
 
 
 
@@ -85,7 +94,5 @@ document.querySelector("#cart-total p:nth-child(2)").lastElementChild.innerText=
 
 }
 
-const calculateProductTotal=(quantityP)=>{
-    let productPrice=quantityP.parentElement.parentElement
-}
+
 

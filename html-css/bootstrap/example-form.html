@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <table class="table bg-warning w-50 mx-auto">
+    <table class="table bg-warning">
         <tr>
           <td><img src="./img/letter.png" width="150px" alt="letter" /></td>
           <td>
@@ -59,7 +59,7 @@
                 size="2"
               >
                 <option value="">High School</option>
-                <option value="">BAchelor Degree</option>
+                <option value="">Bachelor Degree</option>
                 <option value="">Masters' Degree</option>
               </select>
             </div>
@@ -69,17 +69,18 @@
   
             <label for="" class="form-label mt-3">Upload your files :</label>
             <input type="file" name="" id="" class="form-control" />
+            
             <h5 class="mt-3"> Select your favourite cars</h5>
             <div class="from-check">
-                <input type="checkbox" class="form-check-input mx-3" id="car-1">
+                <input type="radio" class="form-check-input mx-3" id="car-1" name="car-select">
                 <label for="car-1" class="form-check-label">porshce</label>
             </div>
             <div class="from-check">
-                <input type="checkbox" class="form-check-input mx-3" id="car-2">
+                <input type="radio" class="form-check-input mx-3" id="car-2" name="car-select">
                 <label for="car-2" class="form-check-label">bmw</label>
             </div>
             <div class="from-check">
-                <input type="checkbox" class="form-check-input mx-3" id="car-3">
+                <input type="radio" class="form-check-input mx-3" id="car-3" name="car-select">
                 <label for="car-3" class="form-check-label">mercedes</label>
             </div>
             <h5 class="mt-3"> Select your age group</h5>
@@ -98,6 +99,7 @@
 
             <div class="form-check form-control-lg form-switch mt-2">
                 <input type="checkbox" class="form-check-input" id="switch" checked>
+                <label for="switch">Switch</label>
             </div>
           </td>
         </tr>

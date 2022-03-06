@@ -24,3 +24,10 @@ console.log("SUM:", sum);
 //! foreach doesnt return
 // const sumofPayments = payments.forEach((p) => (sum += p))
 // console.log(sumofPayments);
+
+//* Example
+payments.forEach((p, i) => {
+    p > 0
+      ? console.log(i + 1, `You deposit ${p}`)
+      : console.log(i + 1, `You withdraw ${p}`);
+  });

@@ -58,3 +58,20 @@ console.log(grades);
 
 // console.log(grades);
 
+//? Modified
+const gradesInfo = grades.map((grade, index) => {
+    const newGrade = (grade > 50 ? grade * 1.1 : grade * 1.2).toFixed(2);
+    return `${index + 1}. Student's Grade: ${newGrade}`;
+  });
+  console.log(gradesInfo);
+  
+  //* Test the each item of the words array whether palindromic or not.
+  //* Return the result as an array which consists of true or
+  //* false values for each item
+  //*-------------------------------------------------------
+  
+  const words = ["mum", "kek", "gel", "ısı", "iyi"];
+  
+  // const checkPalindrome = words.map((word) => [...word].reverse().join('') === word)
+  // console.log(checkPalindrome);
+

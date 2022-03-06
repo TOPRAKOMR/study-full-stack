@@ -31,3 +31,30 @@ payments.forEach((p, i) => {
       ? console.log(i + 1, `You deposit ${p}`)
       : console.log(i + 1, `You withdraw ${p}`);
   });
+
+
+//*                      MAP
+//*-----------------------------------------------------
+
+//* multiply each element of array by 2
+//*-------------------------------------------------------
+const numbers = [2, 3, 5, 6, 8];
+const doubled = numbers.map((n) => n * 2);
+console.log(doubled, numbers);
+
+//* if a grade is less than 50, increase it by 20% oherwise
+//* increase it by 10% and store all value in the grades array.
+//*-------------------------------------------------------
+let grades = [30, 50, 77, 38, 44, 80];
+
+grades = grades.map((grade) =>
+  (grade > 50 ? grade * 1.1 : grade * 1.2).toFixed(2)
+);
+console.log(grades);
+
+// grades = grades.map((grade) => {
+//  return grade > 50 ? grade * 1.1 : grade * 1.2;
+// });
+
+// console.log(grades);
+

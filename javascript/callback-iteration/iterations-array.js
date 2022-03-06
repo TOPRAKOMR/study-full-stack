@@ -75,3 +75,14 @@ const gradesInfo = grades.map((grade, index) => {
   // const checkPalindrome = words.map((word) => [...word].reverse().join('') === word)
   // console.log(checkPalindrome);
 
+
+  //?ALternativly
+// const chekPalindrome = words.map((w) => {
+//   const reverse = w.split("").reverse().join("");
+//   if (reverse == w) {
+//     return w;
+//   }
+// });
+// console.log(chekPalindrome);
+
+

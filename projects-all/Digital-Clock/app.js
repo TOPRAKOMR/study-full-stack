@@ -8,8 +8,9 @@ function ShowClockTime(){
  let clock = hour +":"+ minutes+":"+second;
 
 
-document.getElementsByClassName("clockDisplay").innerText=clock;
-document.getElementsByClassName("clockDisplay").textContent=clock;
+
+document.getElementById("clockDisplay").innerText = clock;
+// document.getElementById("clockDisplay").textContent=clock;
 
 setTimeout(ShowClockTime,1000);
 }

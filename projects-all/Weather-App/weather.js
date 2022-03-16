@@ -71,3 +71,5 @@ const getWeatherDataFromApi = async() =>{
     }
 
 }
+
+

@@ -8,9 +8,13 @@
 
 // },1000);
 
-const sayHi=(cb)=>{
-    cb();
-}
-sayHi(()=>{
-    console.log("Hello");
-});
+// const sayHi=(cb)=>{
+//        ();
+// }
+// sayHi(()=>{
+//     console.log("Hello");
+// });
+
+ import fetch from "node-fetch";
+ fetch("https://jsonplaceholder.typicode.com/users").then((data)=>data.json())
+ .then((users)=>{console.log(users)});

@@ -91,7 +91,6 @@ document.querySelector("#cart-sipping p:nth-child(2)").innerText=shipping.toFixe
 document.querySelector("#cart-total p:nth-child(2)").lastElementChild.innerText=cartTotal.toFixed(2);
 
 
-
 }
 
 

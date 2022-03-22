@@ -20,6 +20,8 @@ function App() {
         img="https://cdn.pixabay.com/photo/2017/08/30/12/45/girl-2696947__480.jpg"
         tel="5555544444555"
       />
+      <Person/>
+      
     </div>
   );
 }

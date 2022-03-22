@@ -7,3 +7,4 @@ import App from "./App";
 //* 2. where the web page renders.
 
 ReactDOM.render(<App />, document.getElementById("root"));
+ 

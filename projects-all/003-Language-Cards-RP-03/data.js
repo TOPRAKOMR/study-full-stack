@@ -9,6 +9,7 @@ import html from "../assets/html.png";
 
 export const categories = [
   {
+    
     name: "javascript",
     img: javascript,
     options: ["Website Development", "1995", "Brendan Eich"],

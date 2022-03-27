@@ -19,6 +19,7 @@ export const categories = [
     img: html,
     options: ["Website Development", "1993", "Tim Berners-Lee"],
   },
+  
   {
     name: "css",
     img: css,

@@ -14,7 +14,6 @@ function App() {
       {/* <UseStateComp /> */}
       {/* {isVisible && <UseEffectComp />} */}
       <Users />
-      
     </div>
   )
 }

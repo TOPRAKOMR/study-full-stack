@@ -38,6 +38,7 @@ import fetch from "node-fetch";
 // }
 // getData();
 
+
 // (async()=>{
 //     // const users=await axios("https://jsonplaceholder.typicode.com/users");
 //     const {data}=await axios("https://jsonplaceholder.typicode.com/users");

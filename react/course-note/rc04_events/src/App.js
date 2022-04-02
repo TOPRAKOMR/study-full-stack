@@ -11,9 +11,8 @@ function App() {
       <h1>Events in React Js</h1>
       {/* <AddEvents /> */}
       {/* <MouseEvents /> */}
-      {/* <Form /> */}
-      {/* <KeyboardEvents /> */}
-      <EventBind />
+      {/* <Form/> */}
+      <KeyboardEvents/>
     </div>
   );
 }

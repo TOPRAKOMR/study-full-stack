@@ -1,17 +1,21 @@
-import React from "react";
 
-const AddEvents = () => {
-  function shoot(e, name) {
-    console.log(e);
-    alert(`Hello ${name}`);
+import React from "react"
+
+const AddEvents=()=>{
+  
+  function shoot(e,name){
+
+    alert(`Great Shot ${name}`)
   }
 
-  return (
+  return(
     <div>
-      {/* <button onClick={shoot}>Take the shoot</button> */}
-      <button onClick={(e) => shoot(e, "Jane")}>Take the shoot</button>
+      {/* <button onClick={shoot}>  take the shoot</button> */}
+      <button onClick={(e)=>shoot(e, "jane")}>  take the shoot</button>
+    
     </div>
-  );
-};
 
-export default AddEvents;
+
+  )
+}
+export default AddEvents

@@ -14,6 +14,9 @@ const Card = ({veri}) => {
                      <img src={img} alt="" />
                      <h2>{capital}</h2>
                      <h4>{population}</h4>
+                     <button className="card--small">Small</button>
+                     <button className="card--large">Large</button>
+
                  </div>
             )
         }) }

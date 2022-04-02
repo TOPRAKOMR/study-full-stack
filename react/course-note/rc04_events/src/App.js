@@ -12,7 +12,8 @@ function App() {
       {/* <AddEvents /> */}
       {/* <MouseEvents /> */}
       {/* <Form/> */}
-      <KeyboardEvents/>
+      {/* <KeyboardEvents/> */}
+      <EventBind/>
     </div>
   );
 }

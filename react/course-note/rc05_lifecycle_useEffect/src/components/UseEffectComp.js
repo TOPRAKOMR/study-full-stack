@@ -23,17 +23,17 @@ const UseEffectComp = () => {
   const [count, setCount] = useState(0)
   const [age, setAge] = useState(4)
 
-  useEffect(() => {
-    console.log('UseEffect!')
-    // count !== 0 && alert(`new notification, total: ${count}`)
-    // let timer = setTimeout(() => {
-    //   alert('hello')
-    // }, 3000)
-    return () => {
-      console.log('Functional Component Unmounted')
-      // clearTimeout(timer)
-    } //! clean up function
-  }, [count])
+  useEffect (()=>{
+    console.log("UseEffect!")
+    count !==0 &&alert(`new notification total : ${count}`)
+    return()=>{
+
+      console.log("Functional Comp Unmounted")
+    }
+
+
+  },[count])
+
 
   console.log('Func Comp Rendered!')
   const increase = () => setCount(count + 1)

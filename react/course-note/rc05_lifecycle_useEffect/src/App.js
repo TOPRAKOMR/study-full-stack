@@ -5,15 +5,18 @@ import Users from './components/Users'
 import UseStateComp from './components/UseStateComp'
 
 function App() {
-  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible, setİsVisible]=useState(true)
   return (
     <div className="App">
       {/* <h2>LifeCycles</h2> */}
-      {/* <button onClick={() => setIsVisible(!isVisible)}>Toggle Comp</button> */}
-      {/* {isVisible && <ClassComponent />} */}
-      {/* <UseStateComp /> */}
-      {/* {isVisible && <UseEffectComp />} */}
-      <Users />
+      {/* {<button onClick={()=>setİsVisible(!isVisible)}>Toggle Comp</button>} */}
+      {/* {isVisible&& <ClassComponent/>}  */}
+      {/* <UseStateComp/> */}
+      {/* {isVisible && <UseEffectComp/>} */}
+      <Users/>
+      
+
+      
     </div>
   )
 }

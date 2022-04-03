@@ -1,0 +1,41 @@
+.card-logo{
+width:65% ;
+height: 75px;
+transition:transform 0.3s ease-out;
+}
+
+.card{
+
+    height: 90px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    background-color: peachpuff;
+}
+
+.card:hover{
+
+    cursor: pointer;
+    box-shadow: 0 px 0px 9px 2px #2b24b2;
+
+}
+
+.card:hover .card-logo{
+    transform: scale(1.15);
+}
+
+.card-title{
+    text-align: center;
+    font-size: 1rem;
+}
+
+.list{
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 500;
+    list-style-position: outside;
+    padding-left: 15px;
+
+}

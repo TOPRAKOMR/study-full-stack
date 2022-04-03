@@ -63,8 +63,8 @@ function App() {
 
   return (
     <div className="container">
-     <Header title="TASK TRACKER" />
-     <AddTask addTask={addTask}/>
+     <Header title="TASK TRACKER" showAddTask={showAddTask} toggleShow={toggleShow} />
+     {showAddTask&&<AddTask addTask={addTask}/>}
      {tasks.length>0?(
        <Tasks tasks={tasks} deleteTask={deleteTask} toggleDone={toggleDone}/>
 

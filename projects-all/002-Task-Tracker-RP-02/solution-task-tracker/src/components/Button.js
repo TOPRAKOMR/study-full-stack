@@ -1,14 +1,14 @@
 
 
 
-const Button = ({handleClick,color,text}) => {
+const Button = ({toggleShow,color,text}) => {
 
    
   return (
     <div>
         <button  
         style={{backgroundColor:color}} 
-        onClick={handleClick}>
+        onClick={toggleShow}>
         {text}
         </button>
 

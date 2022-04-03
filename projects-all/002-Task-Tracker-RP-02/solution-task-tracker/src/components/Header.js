@@ -1,7 +1,7 @@
 import Button from "./Button"
 
 
-const Header = ({title}) => {
+const Header = ({title,showAddTask,toggleShow}) => {
 
   const handleClick=()=>{
     console.log("Click ...")
@@ -11,7 +11,10 @@ const Header = ({title}) => {
   return (
     <div className="header">
         <h1>{title}</h1>
-        <Button handleClick={handleClick} color="purple" text="Show Add Task Bar"/>
+        <Button handleClick={handleClick} 
+        color={showAddTask? "red":"purple"} 
+        text= {showAddTask? "Close Add Task Bar":"Show Add Task Bar"}
+        toggleShow={toggleShow}/>
 
 
     </div>

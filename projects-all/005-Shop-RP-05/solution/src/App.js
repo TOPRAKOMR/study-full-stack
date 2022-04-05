@@ -22,11 +22,14 @@ useEffect(() => {
 
 
   return (
-    <div className="App">
+    <div className="App" style={{width:"400px",height:"400px",display:"flex", flexDirection:"column",flexWrap:"wrap"}}>
       {products.map((product)=>
 
         <div>
-          <ProductItem/>
+          <ProductItem
+          key={product.id}
+          ahmet={product}
+          />
         </div>
       )
       }

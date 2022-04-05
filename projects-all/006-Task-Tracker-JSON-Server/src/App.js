@@ -96,30 +96,40 @@ const addTask =async(newTask)=>{
   //* DELETE TASK
   //* Delete task with axios
   
-  
-  
-  
-  
- 
+  const deleteTask=async(deletedTaskId)=>{
 
-  const deleteTask = (deletedTaskId) => {
-    // console.log("delete Task", deletedTaskId);
-    setTasks(tasks.filter((task) => task.id !== deletedTaskId));
-  };
+    await axios.delete(`${baseUrl}/${deletedTaskId}`);
+    fetchTasks()
+
+  }
+  
+
+  // const deleteTask = (deletedTaskId) => {
+  //   // console.log("delete Task", deletedTaskId);
+  //   setTasks(tasks.filter((task) => task.id !== deletedTaskId));
+  // };
 
   //* TOGGLE DONE
- 
+ const toggleDone=async(toggleDoneId)=>{
+   const data= await axios.get(`${baseUrl}/${toggleDoneId}`)
+   const updateTask = {...data, isDone: !data.isDone};
+   await axios.put(`${baseUrl}/${toggleDoneId}`,updateTask)
+   fetchTasks()
+
+
+ }
 
 
 
-  const toggleDone = (toggleDoneId) => {
-    // console.log("double click", toggleDoneId);
-    setTasks(
-      tasks.map((task) =>
-        task.id === toggleDoneId ? { ...task, isDone: !task.isDone } : task
-      )
-    );
-  };
+
+  // const toggleDone = (toggleDoneId) => {
+  //   // console.log("double click", toggleDoneId);
+  //   setTasks(
+  //     tasks.map((task) =>
+  //       task.id === toggleDoneId ? { ...task, isDone: !task.isDone } : task
+  //     )
+  //   );
+  // };
 
   // TOGGLESHOW
   const toggleShow = () => setShowAddTask(!showAddTask);

@@ -23,6 +23,8 @@ useEffect(() => {
 
   return (
     <div className="App" style={{width:"400px",height:"400px",display:"flex", flexDirection:"column",flexWrap:"wrap"}}>
+      
+      {/* {Map başlangıc} */}
       {products.map((product)=>
 
         <div>

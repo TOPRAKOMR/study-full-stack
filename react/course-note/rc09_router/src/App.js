@@ -15,6 +15,8 @@ function App() {
       <BrowserRouter>
         
         <Navbar/>
+      <div className="main">  
+          
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
@@ -22,7 +24,11 @@ function App() {
           <Route path="*" element={<NotFound/>}/>
 
         </Routes>
-        <Footer/>
+
+
+      </div>
+      
+      <Footer/>
       
       </BrowserRouter>
       

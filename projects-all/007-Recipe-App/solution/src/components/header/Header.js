@@ -4,6 +4,7 @@ import Form from './Form'
 const Header = () => {
   return (
     <div>
+      Food App
         <Form/>
     </div>
   )

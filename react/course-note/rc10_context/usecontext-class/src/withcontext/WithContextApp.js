@@ -4,9 +4,17 @@ import { ProductProvider } from './ProductContext'
 
 const WithContextApp = () => {
   return (
-    <ProductProvider>
+    <div>
+      <ProductProvider>
+
         <ProductList/>
-    </ProductProvider>
+        
+      </ProductProvider>
+      
+
+
+    </div>
+
   )
 }
 

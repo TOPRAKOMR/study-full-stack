@@ -1,20 +1,19 @@
-import React from "react";
-import Product from "./Product";
+import React from 'react'
+import Product from './Product';
 
-const ProductList = ({ products, increasePrice, decreasePrice }) => {
-  
+const ProductList = ({products,increasePrice}) => {
+  console.log(products);
   return (
     <div>
-      {products.map((product) => (
-        <Product
-          key={product.id}
-          product={product}
-          increasePrice={increasePrice}
-          decreasePrice={decreasePrice}
-        />
-      ))}
-    </div>
-  );
-};
+      {
+        products.map(product=>(
+          <Product key={product.id} product={product} increasePrice={increasePrice}/>
 
-export default ProductList;
+        ))
+      }
+     
+    </div>
+  )
+}
+
+export default ProductList

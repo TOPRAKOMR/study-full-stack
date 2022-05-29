@@ -57,3 +57,11 @@ def student_delete(request,id):
         student.delete()
         return redirect("list")
     return render(request, "fscohort/student_delete.html")
+
+
+def student_detail(request,id):
+    student=Student.objects.get(id=id)
+    context={
+        "student":student
+    }
+    return render(request,"fscohort/student_detail.html",context)

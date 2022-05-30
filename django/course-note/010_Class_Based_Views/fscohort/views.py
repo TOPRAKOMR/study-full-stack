@@ -53,7 +53,14 @@ class StudentCreatView(CreateView):
     form_class=StudentForm
     template_name="fscohort/student_add.html"
     success_url=reverse_lazy("list")
-
+    
+    def form_valid(self, form):
+        self.object=form.save()
+        if not self.object.number:
+            self.object.number=999
+        self.object.save()
+        return super().from_valid(form)
+    
 
 def student_detail(request,id):
     student = Student.objects.get(id=id)

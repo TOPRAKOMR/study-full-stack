@@ -1,0 +1,18 @@
+{% extends 'blog\base.html' %} 
+
+{% block content %} 
+
+{% load crispy_forms_tags %}
+
+<h2>Profile Form</h2>
+
+
+<form action="" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form1.as_p }}
+  {{ form2.as_p }}
+ 
+  <button type="submit" class="btn btn-danger">Update</button>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'blog\base.html' %} 
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h2>Delete Post</h2>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{post}}
+    <input type="submit" value="Delete Post">
+
+</form>
+{% endblock content %}

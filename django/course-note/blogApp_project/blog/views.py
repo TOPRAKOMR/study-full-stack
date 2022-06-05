@@ -1,8 +1,8 @@
 from multiprocessing import context
 from django.contrib import messages
 from django.shortcuts import render,redirect,HttpResponse
-from .forms import BlogPostFrom, BlogPostFromDetail
-from .models import Post
+from .forms import BlogPostComment, BlogPostFrom
+from .models import Post,Comment
 
 # Create your views here.
 def home(request):
@@ -49,10 +49,24 @@ def update_post(request,id):
 
 def detail_post(request,id):
     post=Post.objects.get(id=id)
+    user=request.user
     # form=BlogPostFromDetail(instance=post)
     
-  
+    return render(request,'blog/post_detail.html',{'post': post,'user': user})
 
-    return render(request,'blog/post_detail.html',{'post': post})
 
+   
+def delete_post(request,id):
+    post=Post.objects.get(id=id)
+
+    if request.method=="POST":
+        post.delete()
+        return redirect("home")
+    context ={
+        "post":post
+
+        }
+        
+    
+    return render(request,"blog/post_delete.html",context)
 

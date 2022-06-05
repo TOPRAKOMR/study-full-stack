@@ -6,7 +6,9 @@
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{form | crispy }}
-    <input type="submit" value="Add Post">
+    <input type="submit" value="Update Post">
 
 </form>
 {% endblock content %}
+
+

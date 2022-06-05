@@ -6,7 +6,6 @@
 
 <h2>Detail Post</h2>
 
-
 <!-- <form action="" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
   {{ form_detail | crispy }}
@@ -20,7 +19,7 @@
               <img src="media/{{post.post_image}}" title="" alt="">
           </div>
           <div class="article-title">
-              <h2><a href="#">{{post.post_title}}</a></h2>
+              <h2><a href="#">{{post.post_title}} </a></h2>
          
               <div class="media">
                   <div class="media-body">
@@ -36,6 +35,8 @@
       <div class="article-comment">
           <h4>Leave a comment below</h4>
           <form id="comment-form" method="POST">
+            {% csrf_token %}
+            
               <div class="row">
                   <div class="col-md-12">
                       <div class="form-group">
@@ -44,11 +45,25 @@
                   </div>
                   <div class="col-md-12">
                       <div class="send">
-                          <button class="px-btn theme"><span>Send</span> <i class="arrow"></i></button>
+                          <button class="px-btn theme" type="submit" ><span>Send</span> <i class="arrow"></i></button>
                       </div>
                   </div>
               </div>
           </form>
       </div>
+    {% if user == post.author %}
+    <div class="col-md-12">
+        <a class="nav-link" href="{% url 'delete_post' post.id %}">Delete</a>
+        <a class="nav-link" href="{% url 'update_post' post.id %}">Update</a>
+
+    </div>
+    
+    {% else %}
+     <div>
+        <h4>senin değil yazı</h4>
+     </div>
+    {% endif %} 
+
+      
   </div>
 {% endblock content %}

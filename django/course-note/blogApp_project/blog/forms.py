@@ -1,5 +1,5 @@
 from dataclasses import fields
-from .models import Post
+from .models import Post,Comment
 from django import forms
 
 class BlogPostFrom(forms.ModelForm):
@@ -8,8 +8,7 @@ class BlogPostFrom(forms.ModelForm):
         exclude=("author",)
         fields='__all__'
 
-class BlogPostFromDetail(forms.ModelForm):
+class BlogPostComment(forms.ModelForm):
     class Meta:
-        model=Post
-        exclude=("author","post_image","post_status")
-        
+        model=Comment
+        fields= ["comment_content"]

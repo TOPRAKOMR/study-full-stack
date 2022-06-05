@@ -23,7 +23,6 @@ class Post(models.Model):
         return f"{self.post_title} {self.author}"
 
 class Comment(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
     blog=models.ForeignKey(Post,on_delete=models.CASCADE,null=True,blank=True)
     comment_time_stamp=models.DateTimeField(auto_now=True)
     comment_content=models.TextField()
@@ -33,7 +32,6 @@ class Comment(models.Model):
         return f"{self.comment_content}"
 
 class Like(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
     blog=models.ForeignKey(Post,on_delete=models.CASCADE,null=True,blank=True)
     like_count=models.IntegerField(default=0)
     
@@ -41,7 +39,6 @@ class Like(models.Model):
         return f"{self.like_count}"
 
 class PostView(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
     blog=models.ForeignKey(Post,on_delete=models.CASCADE,null=True,blank=True)
     postview_count=models.IntegerField(default=0)
     

@@ -44,7 +44,7 @@
               <p>{{post.post_content}}</p>
           </div>
       </article>
-      <div class="article-comment">
+      <div class="container pt-2">
           <h4>Leave a comment below</h4>
           <form id="comment-form" method="POST">
             {% csrf_token %}
@@ -55,18 +55,37 @@
             </div>
           </form>
       </div>
-    {% if user == post.author %}
-    <div class="col-md-12">
-        <a class="nav-link" href="{% url 'delete_post' post.id %}">Delete</a>
-        <a class="nav-link" href="{% url 'update_post' post.id %}">Update</a>
-    </div>
-    
-    {% else %}
-     <div>
-        <h4>senin değil yazı</h4>
-     </div>
-    {% endif %} 
 
-      
+      {% if user == post.author %}
+      <div class="col-md-12 pt-3">
+          <a class="btn btn-outline-primary d-inline" href="{% url 'delete_post' post.id %}">Delete</a>
+          <a class="btn btn-outline-danger d-inline" href="{% url 'update_post' post.id %}">Update</a>
+      </div>
+  
+      {% endif %} 
+
+      {% if comments %}
+      <div class="row align-items-start pt-3">
+        <div class="col-lg-6 offset-lg-3">
+          Comment {{post.post_comment_count}}
+          <span class="badge badge-dark ml-2">{{post.post_comment_count}}</span>
+        </div>
+        {% for comment in comments %}
+        <div class="col-lg-6 offset-lg-3 mt-2">
+          <div class="card p-2">
+            <div class="row">
+              <div class="col-12">
+                <strong>{{post.author}}</strong> said
+              </div>
+              <div class="col-12">
+                <p class="m-1 mt-3">{{ comment.comment_content }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
   </div>
 {% endblock content %}

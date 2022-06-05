@@ -1,11 +1,11 @@
 {% extends 'blog\base.html' %} 
 {% load bootstrap_icons %}
 {% block content %}
-<h1>Home Page</h1>
+<h1>TOPRAK BLOG DJANGO</h1>
 {% if request.user.is_authenticated %}
-<h2>Wellcome {{request.user}}!</h2>
+<h2>Welcome {{request.user}}!</h2>
 {% else %}
-<h2 id="welcome">Wellcome Guest!</h2>
+<h2 id="welcome">Welcome Guest!</h2>
 {% endif %} 
 
 
@@ -41,8 +41,5 @@
     
 {% endfor %}
 </div>
-
-
-{{posts}}
 
 {% endblock content %}

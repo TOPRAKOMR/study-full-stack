@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.shortcuts import render,redirect,HttpResponse
 from .forms import BlogPostComment, BlogPostFrom
 from .models import Post,Comment
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
@@ -48,9 +49,13 @@ def update_post(request,id):
     }
     return render(request,'blog/post_update.html',context)
 
+
+
+@login_required()
 def detail_post(request,id):
     post=Post.objects.get(id=id)
     user=request.user
+    comments=Comment.objects.filter(blog=post)
     post.post_view_count+=1
     post.save()
 
@@ -78,7 +83,7 @@ def detail_post(request,id):
     else:
         form=BlogPostComment()
 
-    return render(request,'blog/post_detail.html',{'post': post,'user': user, 'form':form})
+    return render(request,'blog/post_detail.html',{'post': post,'user': user, 'form':form,'comments':comments})
 
 
    

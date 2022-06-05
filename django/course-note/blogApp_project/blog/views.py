@@ -12,6 +12,7 @@ def home(request):
     }
 
 
+
     return render(request, 'blog\post_list.html',context)
 
 
@@ -50,9 +51,34 @@ def update_post(request,id):
 def detail_post(request,id):
     post=Post.objects.get(id=id)
     user=request.user
-    # form=BlogPostFromDetail(instance=post)
-    
-    return render(request,'blog/post_detail.html',{'post': post,'user': user})
+    post.post_view_count+=1
+    post.save()
+
+    if 'comment_btn' in request.POST:
+        
+        form=BlogPostComment(request.POST)
+        if form.is_valid():
+            postcomment=form.save(commit=False)
+            postcomment.blog=post
+            postcomment.save()
+            post.post_comment_count+=1
+            post.post_view_count-=2
+            post.save()
+            messages.success(request,"yorum eklendi")
+            
+            return redirect(f'/post_detail/{id}')
+
+    elif 'like_btn' in request.POST:
+        post.post_like_count+=1
+        post.post_view_count-=2
+        post.save()
+        messages.success(request,"favorı eklendi")
+        return redirect(f'/post_detail/{id}')
+
+    else:
+        form=BlogPostComment()
+
+    return render(request,'blog/post_detail.html',{'post': post,'user': user, 'form':form})
 
 
    
@@ -69,4 +95,3 @@ def delete_post(request,id):
         
     
     return render(request,"blog/post_delete.html",context)
-

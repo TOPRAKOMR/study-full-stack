@@ -9,9 +9,11 @@ class Post(models.Model):
     post_title=models.CharField(max_length=200,)
     post_content=models.TextField()
     post_image=models.ImageField(upload_to="blog_pic",blank=True,default='media/profile_pic/2.jpg')
-
+    post_comment_count=models.IntegerField(default=0)
     post_push_date=models.DateTimeField(auto_now=True)
     post_last_updated=models.DateTimeField(auto_now=True)
+    post_view_count=models.IntegerField(default=0)
+    post_like_count=models.IntegerField(default=0)
 
     status={
         (0,"Draft"),
@@ -26,21 +28,7 @@ class Comment(models.Model):
     blog=models.ForeignKey(Post,on_delete=models.CASCADE,null=True,blank=True)
     comment_time_stamp=models.DateTimeField(auto_now=True)
     comment_content=models.TextField()
-    comment_count=models.IntegerField(default=0)
+    
 
     def __str__(self):
         return f"{self.comment_content}"
-
-class Like(models.Model):
-    blog=models.ForeignKey(Post,on_delete=models.CASCADE,null=True,blank=True)
-    like_count=models.IntegerField(default=0)
-    
-    def __str__(self):
-        return f"{self.like_count}"
-
-class PostView(models.Model):
-    blog=models.ForeignKey(Post,on_delete=models.CASCADE,null=True,blank=True)
-    postview_count=models.IntegerField(default=0)
-    
-    def __str__(self):
-        return f"{self.postview_count}"

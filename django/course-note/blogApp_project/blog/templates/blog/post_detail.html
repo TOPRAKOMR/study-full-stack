@@ -4,29 +4,41 @@
 
 {% load crispy_forms_tags %}
 
-<h2>Detail Post</h2>
+{% load bootstrap_icons %}
 
-<!-- <form action="" method="POST" enctype="multipart/form-data">
-  {% csrf_token %}
-  {{ form_detail | crispy }}
-</form> -->
-
+<h2><a href="#">{{post.post_title}} </a></h2>
 
 <div class="row align-items-start">
   <div class="col-lg-12 m-15px-tb">
       <article class="article">
           <div class="article-img">
-              <img src="media/{{post.post_image}}" title="" alt="">
+              <img src="media/{{post.post_image}}" width="150rem" alt="">
           </div>
           <div class="article-title">
-              <h2><a href="#">{{post.post_title}} </a></h2>
-         
-              <div class="media">
+              <div class="">
                   <div class="media-body">
                       <label>{{post.author}}</label>
                       <span>{{post.post_push_date}}</span>
                   </div>
               </div>
+              <div class="">
+                <div class="media-body">
+                    <small class="text-muted"><span class="badge badge-primary">{% bs_icon 'chat' %} : {{post.post_comment_count}}</span></small>
+                    <small class="text-muted"><span class="badge badge-primary">{% bs_icon 'eye' %} : {{post.post_view_count}} </span></small>
+                    <small class="text-muted"><span class="badge badge-primary">{% bs_icon 'heart' %} : {{post.post_like_count}} </span></small>
+                    <small class="text-muted"><span class="badge badge-primary">{% bs_icon 'calendar' %} : {{post.post_last_updated}}</span></small>
+                </div>
+                <div class="">
+                    <div class="media-body">
+                        <p>Enjoy this post? Give it a LIKE!</p>
+                        <form method="post">
+                            {% csrf_token %}
+                            <button type="submit" name="like_btn" id="like_btn" class="btn btn-primary btn-sm">{% bs_icon 'heart' %} : {{post.post_like_count}}</button>
+                        </form>
+                        
+                      
+                    </div>
+            </div>
           </div>
           <div class="article-content">
               <p>{{post.post_content}}</p>
@@ -36,26 +48,17 @@
           <h4>Leave a comment below</h4>
           <form id="comment-form" method="POST">
             {% csrf_token %}
-            
-              <div class="row">
-                  <div class="col-md-12">
-                      <div class="form-group">
-                          <textarea name="message" id="message" placeholder="Your message *" rows="4" class="form-control"></textarea>
-                      </div>
-                  </div>
-                  <div class="col-md-12">
-                      <div class="send">
-                          <button class="px-btn theme" type="submit" ><span>Send</span> <i class="arrow"></i></button>
-                      </div>
-                  </div>
-              </div>
+            {{form | crispy }}
+            <div class="send">
+            <button class="px-btn theme" type="submit" name="comment_btn" ><span>Send</span> <i class="arrow"></i></button>
+            </div>
+            </div>
           </form>
       </div>
     {% if user == post.author %}
     <div class="col-md-12">
         <a class="nav-link" href="{% url 'delete_post' post.id %}">Delete</a>
         <a class="nav-link" href="{% url 'update_post' post.id %}">Update</a>
-
     </div>
     
     {% else %}

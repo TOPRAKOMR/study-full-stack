@@ -16,8 +16,11 @@
 
 {% for city in city_data %}
     {{city.city}} <br>
-    {{city.temp}} <br>
+    {{city.temp}} <span>&#8451;</span> <br>
     <img src="http://openweathermap.org/img/wn/{{city.icon}}.png"><br>
     {{city.desc}} <br>
+    <button>
+        <a href="{% url 'delete' city.city.id %}">Delete</a>
+    </button>
     <hr>
 {% endfor %}

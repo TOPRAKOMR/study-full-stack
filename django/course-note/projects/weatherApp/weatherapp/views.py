@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect,get_object_or_404
 from decouple import config
 import requests
 from pprint import pprint
@@ -26,7 +26,7 @@ def home(request):
                 messages.success(request,'City created')
         else:
             messages.error(request,'There is no city')
-    
+        return redirect ('home')
     city_data=[]
     cities=City.objects.all()
 
@@ -37,7 +37,8 @@ def home(request):
         content=reponse.json()
         data={
         'temp':content['main']['temp'],
-        'city':content['name'],
+        # 'city':content['name'],
+        'city':city,
         'desc':content['weather'][0]['description'],
         'icon':content['weather'][0]['icon'],
 
@@ -54,4 +55,9 @@ def home(request):
     
     return render(request, "weatherapp/home.html",context)
 
+def delete_city(request,id):
+    city=get_object_or_404(City,id=id)
+    city.delete()
+    messages.success(request,'City deleted!')
+    return redirect('home')
 

@@ -129,7 +129,7 @@ switch (month) {
 
 console.log(dayCount); // 29 */
 
-/* let score = 81;
+let score = 81;
 let grade = score > 80
 
 if (grade) {
@@ -141,4 +141,5 @@ if (grade) {
 }else{
     console.log('Üzgünüm kaldınız');
 }
- */
+
+

@@ -87,6 +87,21 @@ console.log('****** LOOPS *******');
 
 console.log("Tahmin Oyunu");
 
-rdm_sayi=Math.random()*100+1;
+rdm_sayi=Math.floor(Math.random()*100+1);
+console.log(rdm_sayi)
 
-
+let tahmin_hak=1;
+do{
+    const tahmin_sayi=Number(prompt("Tahmin sayısı :"));
+    
+    if(tahmin_sayi===rdm_sayi){
+        console.log(`Oyunu ${tahmin_hak}. tahminde kazandınız`);
+        break;
+        
+    }
+    console.log(`Yanlış tahmin${5-tahmin_hak}tahminin var `)
+    tahmin_hak++;
+    
+}
+while(tahmin_hak<5);
+console.log("OYUN bitti")

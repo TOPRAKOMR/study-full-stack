@@ -84,3 +84,9 @@ console.log('****** LOOPS *******');
 // }
 
 // console.log('Q ya basarak çıkış yaptınız !!!');
+
+console.log("Tahmin Oyunu");
+
+rdm_sayi=Math.random()*100+1;
+
+

@@ -5,7 +5,6 @@
 console.log('******* LOOPS IN ARRAYS ******');
 
 const islemler = [-3000, 4500, -2200, -6000, 9000];
-
 const islemlerToplami = () => {
   let yatirma = 0,
     cekme = 0;
@@ -19,7 +18,7 @@ const islemlerToplami = () => {
   return `Toplam yatirma: ${yatirma}, Toplam Cekme:${-cekme}`;
 };
 
-console.log(islemlerToplami());
+// console.log(islemlerToplami());
 
 //* ======================================================
 //*                   FOR-IN LOOP
@@ -46,31 +45,31 @@ const ogrenciler = [
   'cem',
 ];
 
-const ogrenciBul = function (isim) {
-  let sayac = 0;
-  for (let i in ogrenciler) {
-    if (ogrenciler[i] === isim) {
-      sayac++;
-    }
-  }
+// const ogrenciBul = function (isim) {
+//   let sayac = 0;
+//   for (let i in ogrenciler) {
+//     if (ogrenciler[i] === isim) {
+//       sayac++;
+//     }
+//   }
 
-  if (sayac === 0) {
-    return `${isim} bulunamadi`;
-  } else {
-    return `${isim}, ${sayac} adet bulundu`;
-  }
-};
+//   if (sayac === 0) {
+//     return `${isim} bulunamadi`;
+//   } else {
+//     return `${isim}, ${sayac} adet bulundu`;
+//   }
+// };
 
-let ogrIsim = prompt('Ogrenci adini giriniz:').toLocaleLowerCase();
-console.log(ogrenciBul(ogrIsim));
+// let ogrIsim = prompt('Ogrenci adini giriniz:').toLocaleLowerCase();
+// console.log(ogrenciBul(ogrIsim));
 
 //* ======================================================
 //*                   FOR-OF LOOP
 //* ======================================================
 
-//* for of dongusu, for in dongusunun bir cok veri yapisini
-//* kapsayacak sekilde guncellenmis halidir. Bu dongude dizi
-//* icersindeki veriye erisirken indisleme kullanmaya gerek yoktur.
+// * for of dongusu, for in dongusunun bir cok veri yapisini
+// * kapsayacak sekilde guncellenmis halidir. Bu dongude dizi
+// * icersindeki veriye erisirken indisleme kullanmaya gerek yoktur.
 
 const ogrenciBulForOf = function (isim) {
   let sayac = 0;

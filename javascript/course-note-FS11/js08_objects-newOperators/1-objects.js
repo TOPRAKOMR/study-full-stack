@@ -211,3 +211,5 @@ console.log(kisilerFullIsim1);
 //* Ornek7: kisilerin ortalama yasini hesaplayiniz.
 const ortYas = kisiler.reduce((t, kisi) => t + kisi.age, 0) / kisiler.length;
 console.log('ORT YAS:', ortYas);
+
+

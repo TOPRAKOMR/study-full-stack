@@ -60,6 +60,6 @@ dilInput.addEventListener("keydown",(e)=>{
 })
 
 window.onload = () => {
-  javascriptKontrol();
+  javakontrol();
   dilInput.focus();
 };

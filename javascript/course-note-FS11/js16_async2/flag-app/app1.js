@@ -1,5 +1,6 @@
 const fetchCountry = async (name) => {
-    const url =`https://restcountries.com/v3.1/name/${name}`;
+    const url =`https://restcountries.com/v3.1/all`;
+
     try {
         const res =await fetch(url);
         if(!res.ok){
@@ -7,9 +8,11 @@ const fetchCountry = async (name) => {
             throw new Error();
         }
         const data = await res.json();
-        // console.log(data[0])
-        renderCountry(data[0]);
-        
+        console.log(data);
+    
+    
+        // renderCountry(data[0]);
+        renderSelect(data)
     } catch (error) {
         console.log(error)
         
@@ -43,6 +46,18 @@ countriesDiv.innerHTML += `
 `;
 
 }
+
+const renderSelect=(countries)=>{
+    console.log(countries);
+    const selectDiv=document.querySelector('.form-select');
+    for (const country in countries) {
+        selectDiv.innerHTML += `
+        <option value="">${country}</option>
+  `;
+            
+        }
+    }
+    
 
 const renderError=(err)=>{
 const countriesDiv=document.querySelector('.countries')
